@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		
+	</head>
+	<body ng-app="MyApp">
+		<div class="container">
+			<div ng-controller = "padreCtrl">
+				<button ng-click="logPadre()">Padre</button>
+
+				<div ng-controller = "hijoCtrl">
+					<button ng-click="logHijo()">Hijo</button>
+
+					<div ng-controller="nietoCtrl">
+						<button ng-click="logNieto()">Nieto</button>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<script src="lib/angular.js"></script>
+		<script>
+			var app = angular.module('MyApp', []);
+
+			app.controller("padreCtrl", function($scope){
+				$scope.padre = "Soy el padre";
+				$scope.logPadre = function(){
+					console.log($scope.padre);
+				}
+			})
+
+			app.controller("hijoCtrl", function($scope){
+				$scope.hijo = "Soy el primer hijo...";
+				$scope.edadHijo = 36;
+				$scope.logHijo = function(){
+					console.log($scope.hijo, $scope.edadHijo, "Mi padre es: ", $scope.padre);
+				}
+			})
+
+			app.controller("nietoCtrl", function($scope){
+				$scope.nieto = "Soy el nieto...";
+				$scope.edadNieto = 4;
+				$scope.logNieto = function(){
+					console.log($scope.nieto, $scope.edadNieto, $scope.hijo);
+				}
+			})
+		</script>
+	</body>
+</html>
