@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<h2>Usando JavaScript para vincular los scopes a nuestra aplicación</h2>
+	</head>
+	<body ng-app="myApp">
+		<script src="lib/angular.js"></script>
+		<script>
+			var app = angular.module('myApp', []);
+			app.controller('miCtrl', function($scope){
+				$scope.mensaje = 'Mensaje desde el controlador';
+			})
+		</script>
+		<div class="container" ng-controller="miCtrl"> 
+			<input ng-model="test">
+			<h1>{{mensaje}} {{test}}</h1>	
+		</div>
+	</body>
+</html>
