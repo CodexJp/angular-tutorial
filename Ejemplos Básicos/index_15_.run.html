@@ -10,7 +10,7 @@
         .run(["$rootScope", function($rootScope){
           $rootScope.$on("$routeChangeStart", function(e, next, current){
             console.log("Se procede a cambiar la ruta de la aplicación hacia " + next.originalPath);
-          })
+          }) 
         }])
 
         .controller("MyCtrl", MyCtrl);
