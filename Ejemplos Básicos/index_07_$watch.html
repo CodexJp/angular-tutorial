@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html ng-app="MyApp">
+	<head>
+		
+	</head>
+	<body>
+
+		<div ng-controller="MyCtrl">
+			<form action="#">
+				Contraseña: <input type="password" ng-model="password">
+				<p ng-show="errorMinimo">Error: No cumple con el mínimo de caracteres permitidos (6)</p>
+			</form>
+		</div>
+
+		<script src="lib/angular.js"></script>
+		<script>
+			angular.module('MyApp', [])
+
+				.controller("MyCtrl", function($scope){
+					
+					$scope.errorMinimo = false;
+					$scope.$watch("password", function(pass){
+						if(!pass) return;
+
+						if(pass.length < 6){
+							$scope.errorMinimo = true;
+						}else{
+							$scope.errorMinimo = false;
+						}
+					})
+				})
+		</script>
+	</body>
+</html>
