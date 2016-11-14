@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html ng-app="MyApp">
+	<head>
+		
+	</head>
+	<body>
+		<div ng-controller="MyCtrl">
+			<p ng-bind="::mensaje"></p>
+			<input type="text" ng-model="mensaje">
+		</div>
+
+		<script src="lib/angular.js"></script>
+		<script>
+			angular.module('MyApp', [])
+			
+			.controller("MyCtrl", function($scope) {
+				$scope.mensaje = "Primer Mensaje";
+			})	
+		</script>
+	</body>
+</html>
