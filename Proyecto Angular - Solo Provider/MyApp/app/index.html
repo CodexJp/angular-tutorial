@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="MyApp">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="css/app.css">
+</head>
+<body>
+
+    <div class="container" ng-controller="PlaylistCtrl">
+        <ul>
+            <li ng-repeat="titulo in playlist">
+                {{titulo}}
+            </li>
+        </ul>        
+    </div>    
+
+    <script src="lib/angular.js"></script> 
+    <script src="js/app.js"></script>
+    <script src="js/Config/PlaylistConfig.js"></script>
+    <script src="js/Services/PlaylistProvider.js"></script>
+    <script src="js/Controllers/PlaylistCtrl.js"></script>    
+</body>
+</html>

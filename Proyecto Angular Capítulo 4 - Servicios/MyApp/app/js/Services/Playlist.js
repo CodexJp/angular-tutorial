@@ -3,7 +3,7 @@
  *
  * servicio de tipo factory encargado de suministrar la
  * lista de canciones de mi aplicación
- */
+ */ 
  angular.module("MyApp")
   .factory("Playlist", [function(){
     var playlist = [
@@ -17,7 +17,7 @@
       "This Is Where You Can Reach Me Now",
       "Iris (Hold Me Close)",
       "The Troubles",
-      "Volcano",
+      "Volcano"
     ];
 
     var listar = function(){

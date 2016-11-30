@@ -1,16 +1,43 @@
 <!DOCTYPE html>
 <html>
   <head>
+    <meta charset="utf-8"/>
+    <link rel="stylesheet" href="css/app.css">
 
+    <style>
+      .contenido {height: 800px;}
+      #contenido1 {background-color: #1ABC9C}
+      #contenido2 {background-color: #3498DB}
+      #contenido3 {background-color: #9B59B6}
+      #contenido4 {background-color: #E74C3C}
+    </style>
   </head>
   <body ng-app="MyApp">
+
+    <!-- OTRO EJEMPLO PERSONAL CON SERVICIO DE TIPO factory -->
+     <br/>
+     <div class="container" ng-controller="TestCtrl">
+      <h4>PRIMERA PRUEBA CON EL .factory</h4>
+      <ul>
+        <li ng-repeat="integrantes in family">
+          {{integrantes}}
+        </li>
+      </ul>
+    </div> 
+    <br/>
+
+    <!-- ITERACIÓN DE LA LISTA DE CANCIONES A PARTIR DEL SERVICIO TIPO factory: Playlist -->
     <div class="container" ng-controller="PlaylistCtrl">
+      <h4>LISTA DESDE SERVICIO .factory</h4>
       <ul>
         <li ng-repeat="titulo in playlist"> {{titulo}} </li>
       </ul>
-    </div>
+    </div> 
+    <br/>
 
+    <!-- ITERACIÓN CON ELIMINACIÓN DE LA LISTA DE CANCIONES A PARTIR DEL SERVICIO TIPO factory: Playlist (SE REFLEJA UNA SOLA INSTANCIA DEL SERVICIO) -->
     <div class="container" ng-controller="PlaylistMetodosCtrl">
+      <h4>LISTA DESDE SERVICIO .factory CON ELIMINACIÓN (Singleton)</h4>
       <ul>
         <li ng-repeat="titulo in playlist">
           {{titulo}}
@@ -18,11 +45,105 @@
         </li>
       </ul>
     </div>
+    <br/>
 
-    <script src="lib/angular.js"></script>
+    <!-- ITERACIÓN DE LA LISTA DE CANCIONES A PARTIR DEL SERVICIO TIPO service: Playlist (AÚN NO ME SIRVE! - ARREGLAR) -->
+   <div class="container" ng-controller="PlaylistServiceCtrl">
+      <h4>LISTA DESDE SERVICIO .service</h4>
+      <ul>
+        <li ng-repeat="titulo in playlist">
+          {{titulo}}          
+        </li>
+      </ul>
+    </div> 
+    <br/>
+
+    <!-- ITERACIÓN DE LA LISTA DE CANCIONES A PARTIR DEL SERVICIO DE TIPO provider: PlaylistProvider -->
+     <div class="container" ng-controller="PlaylistProviderCtrl">
+      <h4>LISTA DESDE SERVICIO .provider (DESDE EL .config)</h4>
+      <ul>
+        <li ng-repeat="titulo in playlist">
+          {{titulo}} 
+          <a class="button" href="#" ng-click="borrar($index)">&times;</a>
+        </li>
+      </ul>
+      <br/>
+
+      <h4>TOKEN (Esta es una constante definida en la carpeta config)</h4>
+      <div>
+        {{TOKEN}} <br/>
+        {{API_TOKEN_PUBLIC}} <br/>
+        {{API_TOKEN_PRIVATE}} <br/>
+      </div>      
+      <br/>
+
+      <h4>Lista de canciones desde el service de tipo provider (DECORADO)</h4>
+      {{playlistDecorate}}
+    </div> 
+    <br/>
+
+    <!-- IMPLEMENTACIÓN DEL USO DE PROMESAS EN ANGULAR $q (Promise) -->
+    <div class="container" ng-controller="PromiseCtrl">
+      <h4>Uso de las promesas Promise</h4>
+      <p>Estado del servidor: {{ status }}</p>
+      <p>Estado de la petición HTTP: {{ http }}</p>
+      <p>Estado del servidor de base de datos: {{ db }}</p>
+      <p>Estado de las conexiones seguras: {{ ssl }}</p>
+    </div>
+
+    <br/>
+    <div class="container" ng-controller="PromiseAllCtrl">
+      <h4>Varias promesas a la vez</h4>
+      {{ resultado }} <br/>
+      {{ resultadoFinal }}
+    </div>
+
+    <div class="container" ng-controller="PromiseConstructorCtrl">
+      <h4>CONSTRUCTOR DE LA PROMESA</h4>
+      <br/>
+
+      <button ng-click="accion(false)">Resolver</button>
+      <button ng-click="accion(true)">Rechazar</button>
+      <br/><br/>
+
+      <div>{{resuelta}}</div>
+      <div>{{rechazada}}</div>
+    </div>
+
+    <div ng-controller="AnchorScrollCtrl">
+      <a href="" ng-click="irA(1)">Contenido 1</a>
+      <a href="" ng-click="irA(2)">Contenido 2</a>
+      <a href="" ng-click="irA(3)">Contenido 3</a>
+      <a href="" ng-click="irA(4)">Contenido 4</a>
+      <br/>
+
+      <div class="contenido" id="contenido1">Contenido 1</div>
+      <div class="contenido" id="contenido2">Contenido 2</div>
+      <div class="contenido" id="contenido3">Contenido 3</div>
+      <div class="contenido" id="contenido4">Contenido 4</div>
+    </div>
+
+    <script src="lib/angular.js"></script>    
     <script src="js/app.js"></script>
-    <script src="js/Services/Playlist.js"></script>
-    <script src="js/Controllers/PlaylistCtrl.js"></script>
+    <script src="js/Config/PlaylistConfig.js"></script>
+    <script src="js/Config/Constants.js"></script>
+    <script src="js/Decorators/PlaylistServDecorator.js"></script> 
+
+    <script src="js/Services/Playlist.js"></script> 
+    <script src="js/Controllers/PlaylistCtrl.js"></script> 
     <script src="js/Controllers/PlaylistMetodosCtrl.js"></script>
+
+    <script src="js/Controllers/PlaylistServiceCtrl.js"></script> 
+    <script src="js/Services/PlaylistServiceClass.js"></script> 
+
+    <script src="js/Services/PlaylistProvider.js"></script> 
+    <script src="js/Controllers/PlaylistProviderCtrl.js"></script> 
+
+    <script src="js/Controllers/TestCtrl.js"></script> 
+    <script src="js/Services/TestFactory.js"></script>
+    <script src="js/Controllers/PromiseCtrl.js"></script>
+    <script src="js/Controllers/PromiseAllCtrl.js"></script>
+    <script src="js/Controllers/PromiseConstructorCtrl.js"></script>
+    <script src="js/Controllers/AnchorScrollCtrl.js"></script>
   </body>
 </html>

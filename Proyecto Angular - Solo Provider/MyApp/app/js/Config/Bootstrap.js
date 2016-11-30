@@ -3,10 +3,10 @@
  */
 'use strict';
 angular.module('MyApp')
-.run(['$rootScope', '$anchorScroll', function ($rootScope, $anchorScroll) {
+.run(['$rootScope', function ($rootScope) {
 
     /**
      * Do something here when the app start
      */
-    $anchorScroll.yOffset = 500;
+    
 }]);
