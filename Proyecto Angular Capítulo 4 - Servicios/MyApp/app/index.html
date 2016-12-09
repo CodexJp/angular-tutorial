@@ -169,6 +169,13 @@
       <button ng-click="vm.cancelar()">Cancelar</button>
     </div>
 
+    <div class="container" ng-controller="IntervalCtrl as vm">
+      <br/>
+      <h4>USO DEL SERVICIO $interval</h4>
+      <br/>
+      <button ng-click="vm.empezarConteo()">Comenzar conteno regresivo!</button>
+    </div>
+
     <script src="lib/angular.js"></script>    
     <script src="js/app.js"></script>
     <script src="js/Config/PlaylistConfig.js"></script>
@@ -197,5 +204,6 @@
     <script src="js/Controllers/LogCtrl.js"></script>
     <script src="js/Controllers/ExceptionCtrl.js"></script> 
     <script src="js/Controllers/TimeoutCtrl.js"></script> 
+    <script src="js/Controllers/IntervalCtrl.js"></script>
   </body>
 </html>

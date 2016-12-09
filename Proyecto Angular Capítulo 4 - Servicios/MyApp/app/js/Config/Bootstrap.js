@@ -9,6 +9,11 @@ angular.module('MyApp')
  		$logProvider.debugEnabled(true);
  	}])
 
+ 	//Por medio de esta configuración le decimos a Angular que no agregue anotaciones al DOM ya que no nos interesa saberlas
+ 	.config(['$compileProvider', function($compileProvider){
+ 		$compileProvider.debugInfoEnabled(false);
+ 	}])
+
 	.run(['$rootScope', function ($rootScope) {
 	    /**
 	     * Do something here when the app start
