@@ -111,11 +111,15 @@
     </div>
 
     <div ng-controller="AnchorScrollCtrl">
+
+      <h4>USO DE $anchorScroll</h4>
+      <br/>
+
       <a href="" ng-click="irA(1)">Contenido 1</a>
       <a href="" ng-click="irA(2)">Contenido 2</a>
       <a href="" ng-click="irA(3)">Contenido 3</a>
       <a href="" ng-click="irA(4)">Contenido 4</a>
-      <br/>
+      <br/><br/>
 
       <div class="contenido" id="contenido1">Contenido 1</div>
       <div class="contenido" id="contenido2">Contenido 2</div>
@@ -123,9 +127,52 @@
       <div class="contenido" id="contenido4">Contenido 4</div>
     </div>
 
+    <br/><br/>
+    <div class="container">
+      <h4>USO DE LA CACHE DEL NAVEGADOR</h4> 
+      <br/>     
+      <div class="container" ng-controller="CacheGuardarCtrl as guardarCache"> 
+        <input type="text" ng-model="guardarCache.texto">
+        <button ng-click="guardarCache.guardar()">Guardar en la cache</button>
+      </div>
+      <br/>
+
+      <div class="container" ng-controller="CacheCargarCtrl as cargarCache">
+        <button ng-click="cargarCache.imprimir()">Imprimir desde la cache</button>      
+        <button ng-click="cargarCache.borrarCache()">Borrar la cache</button>
+      </div>
+    </div>
+    <br/><br/>    
+
+    <div class="container" ng-controller="LogCtrl">
+      <h4>USO DEL SERVICIO $log</h4>
+      <label>Mensaje: <input type="text" ng-model="mensaje"></label>
+      <button ng-click="log.log(mensaje)">Log</button>
+      <button ng-click="log.warn(mensaje)">Warn</button>
+      <button ng-click="log.info(mensaje)">Info</button>
+      <button ng-click="log.error(mensaje)">Error</button>
+      <button ng-click="log.debug(mensaje)">Debug</button>      
+    </div>
+    <br/>
+
+    <div class="container" ng-controller="ExceptionCtrl as exception">
+      <h4>USO DE EXCEPCIONES</h4>
+      <br/>
+      <button ng-click="exception.generarError()">Generar Error!</button>     
+      <br/> 
+    </div>
+
+    <div class="container" ng-controller="TimeoutCtrl as vm">
+      <br/>
+      <h4>USO DEL SERVICIO $timeout</h4>
+      <br/>
+      <button ng-click="vm.cancelar()">Cancelar</button>
+    </div>
+
     <script src="lib/angular.js"></script>    
     <script src="js/app.js"></script>
     <script src="js/Config/PlaylistConfig.js"></script>
+    <script src="js/Config/Bootstrap.js"></script>
     <script src="js/Config/Constants.js"></script>
     <script src="js/Decorators/PlaylistServDecorator.js"></script> 
 
@@ -145,5 +192,10 @@
     <script src="js/Controllers/PromiseAllCtrl.js"></script>
     <script src="js/Controllers/PromiseConstructorCtrl.js"></script>
     <script src="js/Controllers/AnchorScrollCtrl.js"></script>
+    <script src="js/Controllers/CacheGuardarCtrl.js"></script>
+    <script src="js/Controllers/CacheCargarCtrl.js"></script>
+    <script src="js/Controllers/LogCtrl.js"></script>
+    <script src="js/Controllers/ExceptionCtrl.js"></script> 
+    <script src="js/Controllers/TimeoutCtrl.js"></script> 
   </body>
 </html>

@@ -3,10 +3,14 @@
  */
 'use strict';
 angular.module('MyApp')
-.run(['$rootScope', '$anchorScroll', function ($rootScope, $anchorScroll) {
 
-    /**
-     * Do something here when the app start
-     */
-    $anchorScroll.yOffset = 500;
-}]);
+ 	// Por medio de esta configuración le decimos a Angular que todos los logs de tipo debug no deben ser mostrados en tiempo de ejecución!
+ 	.config(['$logProvider', function($logProvider){
+ 		$logProvider.debugEnabled(true);
+ 	}])
+
+	.run(['$rootScope', function ($rootScope) {
+	    /**
+	     * Do something here when the app start
+	     */
+	}]);
