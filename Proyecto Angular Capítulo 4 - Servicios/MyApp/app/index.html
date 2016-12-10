@@ -23,7 +23,7 @@
           {{integrantes}}
         </li>
       </ul>
-    </div> 
+    </div>
     <br/>
 
     <!-- ITERACIÓN DE LA LISTA DE CANCIONES A PARTIR DEL SERVICIO TIPO factory: Playlist -->
@@ -32,7 +32,7 @@
       <ul>
         <li ng-repeat="titulo in playlist"> {{titulo}} </li>
       </ul>
-    </div> 
+    </div>
     <br/>
 
     <!-- ITERACIÓN CON ELIMINACIÓN DE LA LISTA DE CANCIONES A PARTIR DEL SERVICIO TIPO factory: Playlist (SE REFLEJA UNA SOLA INSTANCIA DEL SERVICIO) -->
@@ -52,10 +52,10 @@
       <h4>LISTA DESDE SERVICIO .service</h4>
       <ul>
         <li ng-repeat="titulo in playlist">
-          {{titulo}}          
+          {{titulo}}
         </li>
       </ul>
-    </div> 
+    </div>
     <br/>
 
     <!-- ITERACIÓN DE LA LISTA DE CANCIONES A PARTIR DEL SERVICIO DE TIPO provider: PlaylistProvider -->
@@ -63,7 +63,7 @@
       <h4>LISTA DESDE SERVICIO .provider (DESDE EL .config)</h4>
       <ul>
         <li ng-repeat="titulo in playlist">
-          {{titulo}} 
+          {{titulo}}
           <a class="button" href="#" ng-click="borrar($index)">&times;</a>
         </li>
       </ul>
@@ -74,12 +74,12 @@
         {{TOKEN}} <br/>
         {{API_TOKEN_PUBLIC}} <br/>
         {{API_TOKEN_PRIVATE}} <br/>
-      </div>      
+      </div>
       <br/>
 
       <h4>Lista de canciones desde el service de tipo provider (DECORADO)</h4>
       {{playlistDecorate}}
-    </div> 
+    </div>
     <br/>
 
     <!-- IMPLEMENTACIÓN DEL USO DE PROMESAS EN ANGULAR $q (Promise) -->
@@ -129,20 +129,20 @@
 
     <br/><br/>
     <div class="container">
-      <h4>USO DE LA CACHE DEL NAVEGADOR</h4> 
-      <br/>     
-      <div class="container" ng-controller="CacheGuardarCtrl as guardarCache"> 
+      <h4>USO DE LA CACHE DEL NAVEGADOR</h4>
+      <br/>
+      <div class="container" ng-controller="CacheGuardarCtrl as guardarCache">
         <input type="text" ng-model="guardarCache.texto">
         <button ng-click="guardarCache.guardar()">Guardar en la cache</button>
       </div>
       <br/>
 
       <div class="container" ng-controller="CacheCargarCtrl as cargarCache">
-        <button ng-click="cargarCache.imprimir()">Imprimir desde la cache</button>      
+        <button ng-click="cargarCache.imprimir()">Imprimir desde la cache</button>
         <button ng-click="cargarCache.borrarCache()">Borrar la cache</button>
       </div>
     </div>
-    <br/><br/>    
+    <br/><br/>
 
     <div class="container" ng-controller="LogCtrl">
       <h4>USO DEL SERVICIO $log</h4>
@@ -151,15 +151,15 @@
       <button ng-click="log.warn(mensaje)">Warn</button>
       <button ng-click="log.info(mensaje)">Info</button>
       <button ng-click="log.error(mensaje)">Error</button>
-      <button ng-click="log.debug(mensaje)">Debug</button>      
+      <button ng-click="log.debug(mensaje)">Debug</button>
     </div>
     <br/>
 
     <div class="container" ng-controller="ExceptionCtrl as exception">
       <h4>USO DE EXCEPCIONES</h4>
       <br/>
-      <button ng-click="exception.generarError()">Generar Error!</button>     
-      <br/> 
+      <button ng-click="exception.generarError()">Generar Error!</button>
+      <br/>
     </div>
 
     <div class="container" ng-controller="TimeoutCtrl as vm">
@@ -176,24 +176,26 @@
       <button ng-click="vm.empezarConteo()">Comenzar conteno regresivo!</button>
     </div>
 
-    <script src="lib/angular.js"></script>    
+
+
+    <script src="lib/angular.js"></script>
     <script src="js/app.js"></script>
     <script src="js/Config/PlaylistConfig.js"></script>
     <script src="js/Config/Bootstrap.js"></script>
     <script src="js/Config/Constants.js"></script>
-    <script src="js/Decorators/PlaylistServDecorator.js"></script> 
+    <script src="js/Decorators/PlaylistServDecorator.js"></script>
 
-    <script src="js/Services/Playlist.js"></script> 
-    <script src="js/Controllers/PlaylistCtrl.js"></script> 
+    <script src="js/Services/Playlist.js"></script>
+    <script src="js/Controllers/PlaylistCtrl.js"></script>
     <script src="js/Controllers/PlaylistMetodosCtrl.js"></script>
 
-    <script src="js/Controllers/PlaylistServiceCtrl.js"></script> 
-    <script src="js/Services/PlaylistServiceClass.js"></script> 
+    <script src="js/Controllers/PlaylistServiceCtrl.js"></script>
+    <script src="js/Services/PlaylistServiceClass.js"></script>
 
-    <script src="js/Services/PlaylistProvider.js"></script> 
-    <script src="js/Controllers/PlaylistProviderCtrl.js"></script> 
+    <script src="js/Services/PlaylistProvider.js"></script>
+    <script src="js/Controllers/PlaylistProviderCtrl.js"></script>
 
-    <script src="js/Controllers/TestCtrl.js"></script> 
+    <script src="js/Controllers/TestCtrl.js"></script>
     <script src="js/Services/TestFactory.js"></script>
     <script src="js/Controllers/PromiseCtrl.js"></script>
     <script src="js/Controllers/PromiseAllCtrl.js"></script>
@@ -202,8 +204,8 @@
     <script src="js/Controllers/CacheGuardarCtrl.js"></script>
     <script src="js/Controllers/CacheCargarCtrl.js"></script>
     <script src="js/Controllers/LogCtrl.js"></script>
-    <script src="js/Controllers/ExceptionCtrl.js"></script> 
-    <script src="js/Controllers/TimeoutCtrl.js"></script> 
+    <script src="js/Controllers/ExceptionCtrl.js"></script>
+    <script src="js/Controllers/TimeoutCtrl.js"></script>
     <script src="js/Controllers/IntervalCtrl.js"></script>
   </body>
 </html>
