@@ -6,10 +6,26 @@
   </head>
   <body ng-app="MyApp">
 
-    <!-- -->     
-    <div class="container">
-      <h4>...</h4>     
-    </div>    
+    <!-- -->
+    <div class="container" ng-controller="UsersJsonCtrl">
+      <h4>PETICIONES AL SERVIDOR CON Angular Js</h4>
+      <br/>
+      <hr>
+      <div ng-repeat="usuario in usuarios">
+        <p><strong>Nombre: </strong> {{usuario.nombre}}</p>
+        <p><strong>Apellidos: </strong> {{usuario.apellidos}}</p>
+        <p><strong>Email: </strong> {{usuario.email}}</p>
+        <p><strong>Lenguajes: </strong> |
+        <span ng-repeat="lenguaje in usuario.languages">
+          {{lenguaje}} |
+        </span> </p>
+        <hr>
+        <br/>
+      </div>
+    </div>
 
+    <script src="lib/angular.js"></script>
+    <script src="js/app.js"></script>
+    <script src="js/Controllers/UsersJsonCtrl.js"></script>
   </body>
 </html>

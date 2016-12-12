@@ -1,0 +1,18 @@
+[{
+    "nombre": "Jairo",
+    "apellidos": "Polo Martínez",
+    "email": "jpmartinezkloster@gamil.com",
+    "languages": ["en","es"]
+},
+{
+    "nombre": "Leidy",
+    "apellidos": "Gueler Martínez",
+    "email": "leidypm_97@hotmail.com",
+    "languages": ["en"]
+},
+{
+    "nombre": "Magalys",
+    "apellidos": "Martínez Días",
+    "email": "magalys@hotmail.com",
+    "languages": ["en","es"]
+}]
