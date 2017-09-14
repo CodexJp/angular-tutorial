@@ -3,4 +3,4 @@ Repositorio usado para cargar los archivos generados a partir del estudio del tu
 
 Este es un cambio de prueba para generar un merge en GitHub!
 
-Este es un cambio para prueba de integración de Slack!
+Este es un cambio para prueba de integración de Slack (2)!
